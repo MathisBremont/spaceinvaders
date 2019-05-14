@@ -25,7 +25,7 @@ public class DessinSpaceInvaders implements DessinJeu {
 	   private void dessinerUnVaisseau(Vaisseau vaisseau, BufferedImage im) {
 		   Graphics2D crayon = (Graphics2D) im.getGraphics();
 
-		   crayon.setColor(Color.gray);
+		   crayon.setColor(Color.blue);
 		   	crayon.fillRect(vaisseau.abscisseLaPlusAGauche(), vaisseau.ordonneeLaPlusBasse(), vaisseau.longueur(), vaisseau.hauteur());
 
 	   }
