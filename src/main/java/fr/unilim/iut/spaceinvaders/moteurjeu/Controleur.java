@@ -69,10 +69,10 @@ public class Controleur implements KeyListener {
 			this.commandeARetourner.bas = true;
 			break;
 			
-//		case KeyEvent.VK_SPACE : 
-//			this.commanderEnCours.tir=true;
-//			this.commandeARetourner.tir=true;			
-//			break;
+		case KeyEvent.VK_SPACE : 
+			this.commandeEnCours.tir=true;
+			this.commandeARetourner.tir=true;			
+			break;
 		}
 		
 		
