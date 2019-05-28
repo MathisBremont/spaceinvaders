@@ -1,4 +1,4 @@
-package fr.unilim.iut.spaceinvaders;
+package fr.unilim.iut.spaceinvaders.model;
 
 public abstract class Sprite {
 
@@ -11,7 +11,6 @@ public abstract class Sprite {
 	}
 
 	public Sprite(Dimension dimension, Position origine, int vitesse) {
-		super();
 		this.dimension = dimension;
 		this.origine = origine;
 		this.vitesse = vitesse;
