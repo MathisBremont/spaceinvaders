@@ -106,19 +106,18 @@ public class SpaceInvaders implements Jeu {
 	public Vaisseau recupererVaisseau() {
 		return this.vaisseau;
 	}
-	
+
 	public void changerVaisseau(Vaisseau vaisseau) {
-		this.vaisseau=vaisseau;
+		this.vaisseau = vaisseau;
 	}
 
 	public Missile recupererMissile() {
 		return this.missile;
 	}
-	
-	public void changerMissile(Missile missile) {
-		this.missile=missile;
-	}
 
+	public void changerMissile(Missile missile) {
+		this.missile = missile;
+	}
 
 	public void tirerUnMissile(Dimension dimensionMissile, int vitesseMissile) {
 
@@ -179,17 +178,17 @@ public class SpaceInvaders implements Jeu {
 	public void changerDirectionEnvahisseur() {
 		if (this.envahisseur.direction == Direction.DROITE) {
 			this.envahisseur.direction = Direction.GAUCHE;
-		}else {
+		} else {
 			this.envahisseur.direction = Direction.DROITE;
 		}
-		
+
 	}
 
 	public void deplacementEnvahisseur() {
 
 		if (this.envahisseur.direction == Direction.DROITE) {
 			this.deplacerEnvahisseurVersLaDroite();
-			if (this.envahisseur.abscisseLaPlusADroite() == this.longueur-1) {
+			if (this.envahisseur.abscisseLaPlusADroite() == this.longueur - 1) {
 				this.changerDirectionEnvahisseur();
 			}
 		}
@@ -214,9 +213,9 @@ public class SpaceInvaders implements Jeu {
 	public Envahisseur recupererEnvahisseur() {
 		return this.envahisseur;
 	}
-	
+
 	public void changerEnvahisseur(Envahisseur envahisseur) {
-		this.envahisseur=envahisseur;
+		this.envahisseur = envahisseur;
 	}
 
 	public void initialiserJeu() {
@@ -230,7 +229,6 @@ public class SpaceInvaders implements Jeu {
 
 		positionnerUnNouveauEnvahisseur(dimensionEnvahisseur, positionEnvahisseur, Constante.ENVAHISSEUR_VITESSE);
 	}
-	
 
 	@Override
 	public void evoluer(Commande commandeUser) {
@@ -255,14 +253,14 @@ public class SpaceInvaders implements Jeu {
 		if (this.aUnEnvahisseur()) {
 			this.deplacementEnvahisseur();
 		}
-		
+
 		if (Collision.detecterCollision(this)) {
-			this.envahisseur=null;
-			this.missile=null;
+			this.envahisseur = null;
+			this.missile = null;
 		}
-//		if (this.envahisseur.equals(null)) {
-//			
-//		}
+		if (this.envahisseur.equals(null)) {
+			this.etreFini();
+		}
 
 	}
 
